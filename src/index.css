@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Manrope", system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-cyan: var(--cyan);
+  --color-earth: var(--earth);
+  --color-water: var(--water);
+  --color-fire: var(--fire);
+  --color-air: var(--air);
+  --color-space: var(--space);
+  --color-success: var(--success);
+}
+
+:root {
+  --radius: 0.875rem;
+  --background: oklch(97.5% 0.008 85);
+  --foreground: oklch(20% 0.03 260);
+  --card: oklch(99.5% 0.004 85);
+  --card-foreground: oklch(20% 0.03 260);
+  --popover: oklch(99.5% 0.004 85);
+  --popover-foreground: oklch(20% 0.03 260);
+  --primary: oklch(62% 0.13 75);
+  --primary-foreground: oklch(15% 0.02 260);
+  --secondary: oklch(93% 0.01 85);
+  --secondary-foreground: oklch(20% 0.03 260);
+  --muted: oklch(93% 0.01 85);
+  --muted-foreground: oklch(45% 0.02 260);
+  --accent: oklch(92% 0.02 200);
+  --accent-foreground: oklch(20% 0.03 260);
+  --destructive: oklch(57.7% 0.245 27.325);
+  --destructive-foreground: oklch(98% 0 0);
+  --border: oklch(87% 0.01 85);
+  --input: oklch(87% 0.01 85);
+  --ring: oklch(62% 0.13 75);
+  --gold: oklch(62% 0.13 75);
+  --cyan: oklch(55% 0.11 210);
+  --earth: oklch(50% 0.12 145);
+  --water: oklch(52% 0.15 245);
+  --fire: oklch(55% 0.2 28);
+  --air: oklch(60% 0.11 225);
+  --space: oklch(45% 0.17 285);
+  --success: oklch(55% 0.15 150);
+  --glass: oklch(100% 0 0 / 0.75);
+}
+
+.dark {
+  --background: oklch(14% 0.03 265);
+  --foreground: oklch(96% 0.01 85);
+  --card: oklch(19% 0.025 265);
+  --card-foreground: oklch(96% 0.01 85);
+  --popover: oklch(19% 0.025 265);
+  --popover-foreground: oklch(96% 0.01 85);
+  --primary: oklch(80% 0.13 82);
+  --primary-foreground: oklch(15% 0.02 265);
+  --secondary: oklch(24% 0.025 265);
+  --secondary-foreground: oklch(96% 0.01 85);
+  --muted: oklch(24% 0.025 265);
+  --muted-foreground: oklch(72% 0.02 260);
+  --accent: oklch(28% 0.04 230);
+  --accent-foreground: oklch(96% 0.01 85);
+  --border: oklch(100% 0 0 / 0.11);
+  --input: oklch(100% 0 0 / 0.15);
+  --ring: oklch(80% 0.13 82);
+  --gold: oklch(80% 0.13 82);
+  --cyan: oklch(78% 0.12 205);
+  --earth: oklch(70% 0.15 145);
+  --water: oklch(68% 0.15 245);
+  --fire: oklch(66% 0.21 30);
+  --air: oklch(80% 0.1 220);
+  --space: oklch(65% 0.17 290);
+  --success: oklch(72% 0.16 150);
+  --glass: oklch(20% 0.03 265 / 0.65);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+}
+
+.glass {
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+}
+
+.bg-gradient-elements {
+  background: linear-gradient(100deg, var(--earth), var(--water), var(--fire), var(--air), var(--space));
+}
+
+.text-gradient {
+  background: linear-gradient(100deg, var(--earth), var(--water), var(--fire), var(--air), var(--space));
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.float-slow {
+  animation: 9s ease-in-out infinite float;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes soundbar {
+  0%, 100% {
+    transform: scaleY(0.35);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.animate-soundbar-1 {
+  animation: soundbar 0.9s ease-in-out infinite;
+}
+.animate-soundbar-2 {
+  animation: soundbar 0.7s ease-in-out 0.2s infinite;
+}
+.animate-soundbar-3 {
+  animation: soundbar 1.1s ease-in-out 0.4s infinite;
+}

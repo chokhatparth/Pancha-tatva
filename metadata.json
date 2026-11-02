@@ -1,0 +1,6 @@
+{
+  "name": "Pancha Tatva",
+  "description": "Explore Prithvi, Apas, Agni, Vayu and Akasha through Vedic, Upanishadic, Ayurvedic, yogic and modern scientific perspectives with sacred ambiance soundscapes and read-aloud narration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
